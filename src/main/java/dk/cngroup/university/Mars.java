@@ -24,4 +24,14 @@ public class Mars {
             return position;
         }
     }
+
+    public RoverPosition moveBackward() {
+        RoverPosition backwardPosition = RoverPositionFactory.getBackwardPosition(position, rover.getDirection());
+
+        if (landscape.isFieldAccessible(backwardPosition)) {
+            return backwardPosition;
+        } else {
+            return position;
+        }
+    }
 }
