@@ -24,7 +24,6 @@ class LandscapeTest extends Specification {
 
         expect:
         landscape.getLandscape() == testLandscape
-
     }
 
 
