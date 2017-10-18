@@ -8,7 +8,7 @@ public class Input {
     private String initialPosition;
     private String finalPosition;
     private String initialDirection;
-    private String landscapeSize;
+    private int landscapeSize;
     private String landscapeMatrix;
     private String commands;
 
@@ -21,8 +21,8 @@ public class Input {
 
         initialPosition = matcher.group(1);
         initialDirection = matcher.group(2);
-        landscapeSize = matcher.group(3);
-        landscapeMatrix = matcher.group(4);
+        landscapeSize = Integer.parseInt(matcher.group(3));
+        landscapeMatrix = matcher.group(4).replaceAll("\n", "");
         finalPosition = matcher.group(5);
         commands = matcher.group(6);
     }
@@ -35,7 +35,7 @@ public class Input {
         return initialDirection;
     }
 
-    public String getLandscapeSize() {
+    public int getLandscapeSize() {
         return landscapeSize;
     }
 

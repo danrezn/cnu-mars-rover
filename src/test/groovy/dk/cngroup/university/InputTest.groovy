@@ -53,10 +53,10 @@ class InputTest extends Specification {
         Input input = new Input(testInput)
 
         when:
-        String landscapeSize = input.getLandscapeSize();
+        int landscapeSize = input.getLandscapeSize();
 
         then:
-        landscapeSize == "5"
+        landscapeSize == 5
     }
 
     @Unroll
@@ -69,11 +69,7 @@ class InputTest extends Specification {
 
         then:
         landscapeMatrix ==
-                "..0..\n" +
-                ".....\n" +
-                ".0..0\n" +
-                ".0...\n" +
-                "....."
+                "..0........0..0.0........"
     }
 
     @Unroll

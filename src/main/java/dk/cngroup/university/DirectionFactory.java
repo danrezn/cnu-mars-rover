@@ -16,4 +16,19 @@ public class DirectionFactory {
         //should never happen
         throw new RuntimeException("unkown worldside value");
     }
+
+    public static Direction getDirection(String direction) {
+        switch (direction) {
+            case "N":
+                return Direction.NORTH;
+            case "E":
+                return Direction.EAST;
+            case "W":
+                return Direction.WEST;
+            case "S":
+                return Direction.SOUTH;
+        }
+        //should never happen
+        throw new RuntimeException("unkown worldside value");
+    }
 }

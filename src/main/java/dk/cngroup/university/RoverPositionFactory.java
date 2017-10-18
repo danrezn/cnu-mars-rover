@@ -29,4 +29,13 @@ public class RoverPositionFactory {
         }
         return position;
     }
+
+    public static RoverPosition getPosition(String position) {
+
+        //Splits text representation of position into two coordinates
+        int x = Integer.parseInt(position.substring(0, position.indexOf(",")));
+        int y = Integer.parseInt(position.substring(position.indexOf(",") + 1));
+
+        return new RoverPosition(x, y);
+    }
 }

@@ -34,4 +34,25 @@ public class Mars {
             return position;
         }
     }
+
+    public void executeCommands(String commands) {
+        char[] commandList = commands.toCharArray();
+
+        for (Character command : commandList) {
+            switch (command) {
+                case 'R':
+                    rover.turnRight();
+                    break;
+                case 'L':
+                    rover.turnLeft();
+                    break;
+                case 'F':
+                    moveForward();
+                    break;
+                case 'B':
+                    moveBackward();
+                    break;
+            }
+        }
+    }
 }

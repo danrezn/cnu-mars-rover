@@ -67,4 +67,21 @@ class LandscapeTest extends Specification {
         false        | -1 | -2
     }
 
+    void "should print to string a field constructed by landscape plan from input"() {
+        given:
+        def landscapeMatrix = new Input(InputTest.testInput).getLandscapeMatrix()
+        def squareSize = new Input(InputTest.testInput).landscapeSize
+
+        Landscape landscape = new Landscape(landscapeMatrix, squareSize)
+
+        when:
+        String result = landscape.toString();
+
+        then:
+        result == "..0..\n" +
+                ".....\n" +
+                ".0..0\n" +
+                ".0...\n" +
+                ".....\n"
+    }
 }

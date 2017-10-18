@@ -26,4 +26,17 @@ class DirectionFactoryTest extends Specification {
         then:
         thrown NullPointerException
     }
+
+    @Unroll
+    "should return #direction from #directionCharacter"(Direction direction, String directionCharacter) {
+        expect:
+        direction == DirectionFactory.getDirection(directionCharacter)
+
+        where:
+        direction       | directionCharacter
+        Direction.NORTH | "N"
+        Direction.SOUTH | "S"
+        Direction.WEST  | "W"
+        Direction.EAST  | "E"
+    }
 }

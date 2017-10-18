@@ -32,4 +32,11 @@ public class RoverPosition {
 
         return true;
     }
+
+    //Used for test
+    public String printPosition() {
+        String result = getX() + "," + getY();
+
+        return result;
+    }
 }

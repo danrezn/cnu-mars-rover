@@ -22,4 +22,5 @@ public class Rover {
     public Rover turnRight() {
         return new Rover(direction.getRightOf());
     }
+
 }
