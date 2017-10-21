@@ -8,8 +8,16 @@ class SimulatorTest extends Specification {
     @Unroll
     "should successfully achieve the destination"() {
         when:
-        boolean result = Simulator.simulate(InputTest.testInput)
+        boolean result = Simulator.simulate(InputTest.testInputTrue)
         then:
         result == true
+    }
+
+    @Unroll
+    "should not successfully achieve the destination"() {
+        when:
+        boolean result = Simulator.simulate(InputTest.testInputFalse)
+        then:
+        result == false
     }
 }

@@ -5,7 +5,7 @@ import spock.lang.Unroll
 
 class InputTest extends Specification {
 
-    def static String testInput =
+    def static String testInputTrue =
 
             "1,0\n" +
                     "\n" +
@@ -23,10 +23,29 @@ class InputTest extends Specification {
                     "\n" +
                     "RRFLFRFF"
 
+    def static String testInputFalse =
+
+            "1,0\n" +
+                    "\n" +
+                    "N\n" +
+                    "\n" +
+                    "5\n" +
+                    "\n" +
+                    "..0..\n" +
+                    ".....\n" +
+                    ".00.0\n" +
+                    ".....\n" +
+                    ".....\n" +
+                    "\n" +
+                    "2,3\n" +
+                    "\n" +
+                    "RRFLFRFF"
+
+
     @Unroll
     "should get text representation of initial position"() {
         given:
-        Input input = new Input(testInput)
+        Input input = new Input(testInputTrue)
 
         when:
         String initialPosition = input.getInitialPosition();
@@ -38,7 +57,7 @@ class InputTest extends Specification {
     @Unroll
     "should get text representation of initial direction"() {
         given:
-        Input input = new Input(testInput)
+        Input input = new Input(testInputTrue)
 
         when:
         String initialDirection = input.getInitialDirection();
@@ -50,7 +69,7 @@ class InputTest extends Specification {
     @Unroll
     "should get text representation of landscape size"() {
         given:
-        Input input = new Input(testInput)
+        Input input = new Input(testInputTrue)
 
         when:
         int landscapeSize = input.getLandscapeSize();
@@ -62,7 +81,7 @@ class InputTest extends Specification {
     @Unroll
     "should get text representation of landscape matrix"() {
         given:
-        Input input = new Input(testInput)
+        Input input = new Input(testInputTrue)
 
         when:
         String landscapeMatrix = input.getLandscapeMatrix();
@@ -75,7 +94,7 @@ class InputTest extends Specification {
     @Unroll
     "should get text representation of final position"() {
         given:
-        Input input = new Input(testInput)
+        Input input = new Input(testInputTrue)
 
         when:
         String finalPosition = input.getFinalPosition();
@@ -87,7 +106,7 @@ class InputTest extends Specification {
     @Unroll
     "should get text representation of commands"() {
         given:
-        Input input = new Input(testInput)
+        Input input = new Input(testInputTrue)
 
         when:
         String commands = input.getCommands();

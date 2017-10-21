@@ -69,8 +69,8 @@ class LandscapeTest extends Specification {
 
     void "should print to string a field constructed by landscape plan from input"() {
         given:
-        def landscapeMatrix = new Input(InputTest.testInput).getLandscapeMatrix()
-        def squareSize = new Input(InputTest.testInput).landscapeSize
+        def landscapeMatrix = new Input(InputTest.testInputTrue).getLandscapeMatrix()
+        def squareSize = new Input(InputTest.testInputTrue).landscapeSize
 
         Landscape landscape = new Landscape(landscapeMatrix, squareSize)
 
