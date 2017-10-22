@@ -11,7 +11,7 @@ public class Camera {
     }
 
     public String generateAlbum() {
-        String photoAlbum = "Stones in photoalbum: " + String.join(" + ", allPhotos);
+        String photoAlbum = String.join(" + ", allPhotos);
 
         return photoAlbum;
     }

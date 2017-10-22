@@ -105,6 +105,25 @@ class InputTest extends Specification {
                     "\n" +
                     "RF"
 
+    def static String testInputOdometer =
+
+            "1,0\n" +
+                    "\n" +
+                    "N\n" +
+                    "\n" +
+                    "6\n" +
+                    "\n" +
+                    "...0..\n" +
+                    "......\n" +
+                    "......\n" +
+                    "......\n" +
+                    "......\n" +
+                    "......\n" +
+                    "\n" +
+                    "1,5\n" +
+                    "\n" +
+                    "FFRFBFLFFRFFRFLFFF"
+
 
     @Unroll
     "should get text representation of initial position"() {

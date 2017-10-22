@@ -39,5 +39,6 @@ class SimulatorTest extends Specification {
         InputTest.testInputTrue                | true
         InputTest.testInputInitialInaccessible | false
         InputTest.testInputFinalInaccessible   | false
+        InputTest.testInputOdometer            | true
     }
 }

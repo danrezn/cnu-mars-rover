@@ -8,6 +8,7 @@ public class Simulator {
     private static Landscape landscape;
     private static RoverPosition roverPosition;
     private static Camera camera;
+    private static Odometer odometer;
 
     private static Mars mars;
 
@@ -20,8 +21,9 @@ public class Simulator {
         landscape = new Landscape(input.getLandscapeMatrix(), input.getLandscapeSize());
         roverPosition = RoverPositionFactory.getPosition(input.getInitialPosition());
         camera = new Camera();
+        odometer = new Odometer();
 
-        mars = new Mars(rover, landscape, roverPosition, camera);
+        mars = new Mars(rover, landscape, roverPosition, camera, odometer);
 
         RoverPosition initialPosition = RoverPositionFactory.getPosition(input.getInitialPosition());
         RoverPosition finalPosition = RoverPositionFactory.getPosition(input.getFinalPosition());
@@ -33,7 +35,8 @@ public class Simulator {
 
         executeCommands(input.getCommands());
 
-        System.out.println(camera.generateAlbum());
+        System.out.println("The photoalbum contains pictures of these stones: " + camera.generateAlbum());
+        System.out.println("The rover has traveled " + odometer.getMetersTraveled() + " meter(s)");
 
         if (mars.getPosition().printPosition().equals(RoverPositionFactory.getPosition(input.getFinalPosition()).printPosition())) {
             return true;
@@ -47,7 +50,7 @@ public class Simulator {
 
         for (Character command : commandList) {
 
-            mars = new Mars(rover, landscape, roverPosition, camera);
+            mars = new Mars(rover, landscape, roverPosition, camera, odometer);
             checkForwardPosition();
 
 
@@ -59,11 +62,11 @@ public class Simulator {
                     rover = new Rover(rover.getDirection().getLeftOf());
                     break;
                 case 'F':
-                    mars = new Mars(rover, landscape, mars.moveForward(), camera);
+                    mars = new Mars(rover, landscape, mars.moveForward(), camera, odometer);
                     roverPosition = mars.getPosition();
                     break;
                 case 'B':
-                    mars = new Mars(rover, landscape, mars.moveBackward(), camera);
+                    mars = new Mars(rover, landscape, mars.moveBackward(), camera, odometer);
                     roverPosition = mars.getPosition();
                     break;
             }
@@ -84,5 +87,9 @@ public class Simulator {
 
     public static Camera getCamera() {
         return camera;
+    }
+
+    public static Odometer getOdometer() {
+        return odometer;
     }
 }
