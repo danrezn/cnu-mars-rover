@@ -21,6 +21,13 @@ public class Simulator {
 
         mars = new Mars(rover, landscape, roverPosition);
 
+        RoverPosition initialPosition = RoverPositionFactory.getPosition(input.getInitialPosition());
+        RoverPosition finalPosition = RoverPositionFactory.getPosition(input.getFinalPosition());
+
+        if (landscape.isInaccessibilityDetected(initialPosition, finalPosition)) {
+            return false;
+        }
+
         executeCommands(input.getCommands());
 
         if (mars.getPosition().printPosition().equals(RoverPositionFactory.getPosition(input.getFinalPosition()).printPosition())) {

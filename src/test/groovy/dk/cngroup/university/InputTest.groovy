@@ -41,6 +41,54 @@ class InputTest extends Specification {
                     "\n" +
                     "RRFLFRFF"
 
+    def static String specialTestInputTrue =
+
+            "0,0\n" +
+                    "\n" +
+                    "N\n" +
+                    "\n" +
+                    "3\n" +
+                    "\n" +
+                    "...\n" +
+                    "00.\n" +
+                    "..0\n" +
+                    "\n" +
+                    "1,2\n" +
+                    "\n" +
+                    "FLFBRRRFLFFRFRFBLF"
+
+    def static String testInputInitialInaccessible =
+
+            "0,0\n" +
+                    "\n" +
+                    "N\n" +
+                    "\n" +
+                    "3\n" +
+                    "\n" +
+                    "0..\n" +
+                    "...\n" +
+                    "...\n" +
+                    "\n" +
+                    "0,2\n" +
+                    "\n" +
+                    "RFF"
+
+    def static String testInputFinalInaccessible =
+
+            "1,0\n" +
+                    "\n" +
+                    "N\n" +
+                    "\n" +
+                    "3\n" +
+                    "\n" +
+                    "...\n" +
+                    ".0.\n" +
+                    "...\n" +
+                    "\n" +
+                    "1,1\n" +
+                    "\n" +
+                    "RF"
+
 
     @Unroll
     "should get text representation of initial position"() {

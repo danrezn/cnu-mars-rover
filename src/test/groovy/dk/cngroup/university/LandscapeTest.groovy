@@ -84,4 +84,23 @@ class LandscapeTest extends Specification {
                 ".0...\n" +
                 ".....\n"
     }
+
+    void "should return false if the initial and final destinations are at ACCESSIBLE fields"(String inputText, boolean result) {
+        given:
+        def input = new Input(inputText)
+        def landscape = new Landscape(input.getLandscapeMatrix(), input.getLandscapeSize())
+        def initialPosition = RoverPositionFactory.getPosition(input.getInitialPosition())
+        def finalPosition = RoverPositionFactory.getPosition(input.getFinalPosition())
+
+        expect:
+        result == landscape.isInaccessibilityDetected(initialPosition, finalPosition)
+
+        where:
+        inputText                              | result
+        InputTest.testInputTrue                | false
+        InputTest.testInputInitialInaccessible | true
+        InputTest.testInputFinalInaccessible   | true
+
+
+    }
 }

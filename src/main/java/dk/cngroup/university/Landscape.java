@@ -85,4 +85,17 @@ public class Landscape {
         return result;
     }
 
+    /**
+     * Detects situation, when either initial or final destinations are at an INACCESSIBLE field.
+     * Returns false if both positions ara at ACCESSIBLE field
+     */
+    public boolean isInaccessibilityDetected(RoverPosition initialPosition, RoverPosition finalPosition) {
+        if (isFieldAccessible(initialPosition) && isFieldAccessible(finalPosition)) {
+            return false;
+        } else {
+            return true;
+        }
+
+    }
+
 }

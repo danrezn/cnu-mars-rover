@@ -20,4 +20,12 @@ class SimulatorTest extends Specification {
         then:
         result == false
     }
+
+    @Unroll
+    "should successfully achieve the destination on special landscape"() {
+        when:
+        boolean result = Simulator.simulate(InputTest.specialTestInputTrue)
+        then:
+        result == true
+    }
 }
