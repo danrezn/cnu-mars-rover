@@ -17,8 +17,9 @@ class MarsTest extends Specification {
 
         def landscape = new Landscape(LandscapeTest.testLandscape)
         def position = new RoverPosition(1, 1)
+        def camera = new Camera()
 
-        def mars = new Mars(rover, landscape, position)
+        def mars = new Mars(rover, landscape, position, camera)
 
         when:
         def newPosition = mars
@@ -51,8 +52,9 @@ class MarsTest extends Specification {
         Landscape landscape = new Landscape(generator, 3)
 
         def position = new RoverPosition(0, 2)
+        def camera = new Camera()
 
-        def mars = new Mars(rover, landscape, position)
+        def mars = new Mars(rover, landscape, position, camera)
 
         when:
         def newPosition = mars
@@ -81,8 +83,9 @@ class MarsTest extends Specification {
 
         def landscape = new Landscape(LandscapeTest.testLandscape)
         def position = new RoverPosition(1, 1)
+        def camera = new Camera();
 
-        def mars = new Mars(rover, landscape, position)
+        def mars = new Mars(rover, landscape, position, camera)
 
         when:
         def newPosition = mars.moveBackward()
@@ -114,8 +117,9 @@ class MarsTest extends Specification {
         Landscape landscape = new Landscape(generator, 3)
 
         def position = new RoverPosition(0, 2)
+        def camera = new Camera()
 
-        def mars = new Mars(rover, landscape, position)
+        def mars = new Mars(rover, landscape, position, camera)
 
         when:
         def newPosition = mars

@@ -4,11 +4,13 @@ public class Mars {
     private Rover rover;
     private Landscape landscape;
     private RoverPosition position;
+    private Camera camera;
 
-    public Mars(Rover rover, Landscape landscape, RoverPosition position) {
+    public Mars(Rover rover, Landscape landscape, RoverPosition position, Camera camera) {
         this.rover = rover;
         this.landscape = landscape;
         this.position = position;
+        this.camera = camera;
     }
 
     public RoverPosition getPosition() {

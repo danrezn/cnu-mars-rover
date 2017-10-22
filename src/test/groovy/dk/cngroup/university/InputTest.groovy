@@ -89,6 +89,22 @@ class InputTest extends Specification {
                     "\n" +
                     "RF"
 
+    def static String testInputStoneDetection =
+
+            "1,0\n" +
+                    "\n" +
+                    "N\n" +
+                    "\n" +
+                    "3\n" +
+                    "\n" +
+                    "0..\n" +
+                    "..0\n" +
+                    "...\n" +
+                    "\n" +
+                    "1,1\n" +
+                    "\n" +
+                    "RF"
+
 
     @Unroll
     "should get text representation of initial position"() {

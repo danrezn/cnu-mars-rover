@@ -28,4 +28,16 @@ class SimulatorTest extends Specification {
         then:
         result == true
     }
+
+    @Unroll
+    "should detect situation when initial or final position is at an inaccessible field"(String inputText, boolean result) {
+        expect:
+        result == Simulator.simulate(inputText)
+
+        where:
+        inputText                              | result
+        InputTest.testInputTrue                | true
+        InputTest.testInputInitialInaccessible | false
+        InputTest.testInputFinalInaccessible   | false
+    }
 }
