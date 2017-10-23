@@ -197,5 +197,4 @@ class InputTest extends Specification {
         then:
         commands == "RRFLFRFF"
     }
-
 }

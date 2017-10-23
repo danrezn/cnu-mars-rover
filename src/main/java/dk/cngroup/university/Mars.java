@@ -40,5 +40,4 @@ public class Mars {
             return position;
         }
     }
-
 }

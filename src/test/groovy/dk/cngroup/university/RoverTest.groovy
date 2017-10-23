@@ -66,5 +66,4 @@ class RoverTest extends Specification {
         SOUTH        | WEST
         EAST         | SOUTH
     }
-
 }

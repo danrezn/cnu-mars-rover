@@ -49,10 +49,8 @@ public class Simulator {
         char[] commandList = commands.toCharArray();
 
         for (Character command : commandList) {
-
             mars = new Mars(rover, landscape, roverPosition, camera, odometer);
             checkForwardPosition();
-
 
             switch (command) {
                 case 'R':

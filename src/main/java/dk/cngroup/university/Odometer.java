@@ -8,7 +8,6 @@ public class Odometer {
     private int metersTraveled = 0;
 
     public Odometer() {
-
     }
 
     public void addMeterTraveled() {
